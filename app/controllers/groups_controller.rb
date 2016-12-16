@@ -41,14 +41,13 @@ class GroupsController < ApplicationController
 
 
   def destroy
-    
+
     @group.destroy
     flash[:alert] ="Group deletd"
     redirect_to groups_path
   end
 
   private
-  def find_group_and_check_permission
 
   def group_params
     params.require(:group).permit(:title, :description)
